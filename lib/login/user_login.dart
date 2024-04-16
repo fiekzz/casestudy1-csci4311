@@ -10,6 +10,13 @@ class UserLoginScreen extends StatefulWidget {
 class _UserLoginScreenState extends State<UserLoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('User login'),
+      ),
+      body: const Center(
+        child: Text('User login'),
+      ),
+    );
   }
 }
