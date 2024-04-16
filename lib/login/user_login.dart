@@ -13,6 +13,7 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('User login'),
+        backgroundColor: Colors.blue[600],
       ),
       body: const Center(
         child: Text('User login'),
