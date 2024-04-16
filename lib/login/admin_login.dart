@@ -10,6 +10,6 @@ class AdminLoginScreen extends StatefulWidget {
 class _AdminLoginScreenState extends State<AdminLoginScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Text('Admin Login');
   }
 }
