@@ -1,6 +1,5 @@
 import 'package:casestudy1/features/dashboard/user_dashboard.dart';
 import 'package:casestudy1/login/user_login.dart';
-import 'package:casestudy1/utils/models/user_token_model.dart';
 import 'package:casestudy1/utils/pgettoken.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';

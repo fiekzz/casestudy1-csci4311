@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:casestudy1/component/pfetch.dart';
 import 'package:casestudy1/utils/models/get_user_details_model.dart';
 import 'package:casestudy1/utils/models/get_working_status_model.dart';
