@@ -1,6 +1,7 @@
 import 'package:casestudy1/component/payroll_button.dart';
 import 'package:casestudy1/component/payroll_textformfield.dart';
 import 'package:casestudy1/features/dashboard/user_dashboard.dart';
+import 'package:casestudy1/login/admin_login.dart';
 import 'package:casestudy1/main.dart';
 import 'package:casestudy1/utils/api_manager.dart';
 import 'package:casestudy1/utils/ui_colors.dart';
@@ -151,7 +152,14 @@ class _UserLoginScreenState extends State<UserLoginScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => AdminLoginScreen(),
+                              ),
+                            );
+                          },
                           child: const Text(
                             'Login as admin',
                             style: TextStyle(color: Colors.blue),
