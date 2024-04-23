@@ -40,8 +40,8 @@ class DioFactory {
       validateStatus: (status) {
         return true;
       },
-      sendTimeout: Duration(seconds: 240),
-      connectTimeout: Duration(seconds: 240),
+      sendTimeout: const Duration(seconds: 240),
+      connectTimeout: const Duration(seconds: 240),
     );
 
     // dio.httpClientAdapter = IOHttpClientAdapter(

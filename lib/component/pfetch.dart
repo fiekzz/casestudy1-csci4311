@@ -26,7 +26,7 @@ class PFetch {
   Future<dynamic> authorizedRequest() async {
     final agDio = DioFactory().getDio();
 
-    final storage = FlutterSecureStorage();
+    final storage = const FlutterSecureStorage();
 
     final token = await storage.read(key: 'token');
 

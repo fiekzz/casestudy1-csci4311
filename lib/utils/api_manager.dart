@@ -23,6 +23,7 @@ class ApiManager {
     }
   }
 
+
   static Future<GetUserDetailsModel> getUserDetails() async {
     try {
       final response = await PFetch(

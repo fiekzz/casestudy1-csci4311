@@ -72,26 +72,26 @@ class PayrollButton extends ConsumerWidget {
       height: height,
       child: ElevatedButton(
         style: ButtonStyle(
-          shape: MaterialStateProperty.all(
+          shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(borderRadius),
               side: BorderSide(color: borderColor ?? Colors.transparent),
             ),
           ),
-          elevation: MaterialStateProperty.all<double>(0),
-          backgroundColor: MaterialStateProperty.all(
+          elevation: WidgetStateProperty.all<double>(0),
+          backgroundColor: WidgetStateProperty.all(
             disabled || isLoading
                 ? const Color(0xFFCFCFCF)
                 : (backgroundColor ??
                     Theme.of(context).colorScheme.primaryContainer),
           ),
-          foregroundColor: MaterialStateProperty.all(
+          foregroundColor: WidgetStateProperty.all(
             disabled || isLoading
                 ? const Color(0xFF9A9A9A)
                 : (foregroundColor ??
                     Theme.of(context).colorScheme.onPrimaryContainer),
           ),
-          overlayColor: MaterialStateProperty.all(overlayColor),
+          overlayColor: WidgetStateProperty.all(overlayColor),
         ),
         onPressed: (disabled || isLoading) ? null : onPressed,
         child: isLoading

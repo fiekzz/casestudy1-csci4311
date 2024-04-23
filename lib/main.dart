@@ -19,7 +19,7 @@ final navigatorKey = GlobalKey<NavigatorState>();
 final scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
 
 class _MyAppState extends State<MyApp> {
-  final storage = FlutterSecureStorage();
+  final storage = const FlutterSecureStorage();
 
   @override
   void initState() {
@@ -40,6 +40,8 @@ class _MyAppState extends State<MyApp> {
       // home: userToken != null
       //     ? UserDashboard(userID: userToken!.sub!)
       //     : const UserLoginScreen(),
+      
+
       home: FutureBuilder(
         future: Future.wait([storage.readAll()]),
         builder: (context, snapshot) {
@@ -73,6 +75,9 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
+
+
 
 // class MyHomePage extends StatefulWidget {
 //   const MyHomePage({super.key, required this.title});

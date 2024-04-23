@@ -24,6 +24,53 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
   final loginFormKey = GlobalKey<FormState>();
 
   void login () async {
+    try {
+      if (loginFormKey.currentState!.validate()) {
+        final data = await ApiManager.userLogin(
+            emailController.text, passwordController.text);
+
+        const storage = FlutterSecureStorage();
+
+        print(data.data!.token);
+
+        await Future.wait([
+          storage.write(
+            key: 'token',
+            value: data.data!.token ?? '',
+          ),
+          storage.write(
+            key: 'loginType',
+            value: 'admin',
+          )
+        ]);
+
+        // Get user id
+        final userID = data.data?.userId;
+
+        if (data.success ?? false) {
+          Navigator.pushAndRemoveUntil(
+            navigatorKey.currentContext!,
+            MaterialPageRoute(
+              builder: (context) => UserDashboard(userID: userID ?? ''),
+            ),
+            (route) => false,
+          );
+        } else {
+          ScaffoldMessenger.of(navigatorKey.currentContext!).showSnackBar(
+            SnackBar(
+              content: Text(data.message ?? 'An error occurred.'),
+              backgroundColor: UiColors.alertRed,
+            ),
+          );
+        }
+      }
+    } catch (error) {
+      ScaffoldMessenger.of(navigatorKey.currentContext!).showSnackBar(
+        SnackBar(
+          content: const Text('An error has occurred.'),
+        ),
+      );
+    }
 
   }
     @override

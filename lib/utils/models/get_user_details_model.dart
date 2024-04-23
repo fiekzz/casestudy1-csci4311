@@ -18,11 +18,11 @@ class GetUserDetailsModel {
 
   GetUserDetailsModel.fromJson(Map<String, dynamic> json) {
     message = json['message'];
-    data = json['data'] != null ? new Data.fromJson(json['data']) : null;
+    data = json['data'] != null ? Data.fromJson(json['data']) : null;
     if (json['userWorkingTime'] != null) {
       userWorkingTime = <UserWorkingTime>[];
       json['userWorkingTime'].forEach((v) {
-        userWorkingTime!.add(new UserWorkingTime.fromJson(v));
+        userWorkingTime!.add(UserWorkingTime.fromJson(v));
       });
     }
     totalHoursPerMonth = json['totalHoursPerMonth'];
@@ -32,19 +32,19 @@ class GetUserDetailsModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['message'] = this.message;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['message'] = message;
     if (this.data != null) {
       data['data'] = this.data!.toJson();
     }
-    if (this.userWorkingTime != null) {
+    if (userWorkingTime != null) {
       data['userWorkingTime'] =
-          this.userWorkingTime!.map((v) => v.toJson()).toList();
+          userWorkingTime!.map((v) => v.toJson()).toList();
     }
-    data['totalHoursPerMonth'] = this.totalHoursPerMonth;
-    data['thisMonthRevenue'] = this.thisMonthRevenue;
-    data['overallRevenue'] = this.overallRevenue;
-    data['success'] = this.success;
+    data['totalHoursPerMonth'] = totalHoursPerMonth;
+    data['thisMonthRevenue'] = thisMonthRevenue;
+    data['overallRevenue'] = overallRevenue;
+    data['success'] = success;
     return data;
   }
 }
@@ -72,37 +72,37 @@ class Data {
     if (json['roles'] != null) {
       roles = <Roles>[];
       json['roles'].forEach((v) {
-        roles!.add(new Roles.fromJson(v));
+        roles!.add(Roles.fromJson(v));
       });
     }
     if (json['PaymentByWeek'] != null) {
       paymentByWeek = <PaymentByWeek>[];
       json['PaymentByWeek'].forEach((v) {
-        paymentByWeek!.add(new PaymentByWeek.fromJson(v));
+        paymentByWeek!.add(PaymentByWeek.fromJson(v));
       });
     }
     if (json['Attendance'] != null) {
       attendance = <Attendance>[];
       json['Attendance'].forEach((v) {
-        attendance!.add(new Attendance.fromJson(v));
+        attendance!.add(Attendance.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['userID'] = this.userID;
-    data['fullName'] = this.fullName;
-    data['email'] = this.email;
-    if (this.roles != null) {
-      data['roles'] = this.roles!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['userID'] = userID;
+    data['fullName'] = fullName;
+    data['email'] = email;
+    if (roles != null) {
+      data['roles'] = roles!.map((v) => v.toJson()).toList();
     }
-    if (this.paymentByWeek != null) {
+    if (paymentByWeek != null) {
       data['PaymentByWeek'] =
-          this.paymentByWeek!.map((v) => v.toJson()).toList();
+          paymentByWeek!.map((v) => v.toJson()).toList();
     }
-    if (this.attendance != null) {
-      data['Attendance'] = this.attendance!.map((v) => v.toJson()).toList();
+    if (attendance != null) {
+      data['Attendance'] = attendance!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -122,10 +122,10 @@ class Roles {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['roleID'] = this.roleID;
-    data['roleName'] = this.roleName;
-    data['rate'] = this.rate;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['roleID'] = roleID;
+    data['roleName'] = roleName;
+    data['rate'] = rate;
     return data;
   }
 }
@@ -142,9 +142,9 @@ class PaymentByWeek {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['amount'] = this.amount;
-    data['startDateOfTheWeek'] = this.startDateOfTheWeek;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['amount'] = amount;
+    data['startDateOfTheWeek'] = startDateOfTheWeek;
     return data;
   }
 }
@@ -159,8 +159,8 @@ class Attendance {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['checkOut'] = this.checkOut;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['checkOut'] = checkOut;
     return data;
   }
 }
@@ -179,10 +179,10 @@ class UserWorkingTime {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['checkIn'] = this.checkIn;
-    data['checkOut'] = this.checkOut;
-    data['workingTime'] = this.workingTime;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['checkIn'] = checkIn;
+    data['checkOut'] = checkOut;
+    data['workingTime'] = workingTime;
     return data;
   }
 }

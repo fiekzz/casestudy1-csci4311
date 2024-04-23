@@ -12,10 +12,10 @@ class UserTokenModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['sub'] = this.sub;
-    data['email'] = this.email;
-    data['role'] = this.role;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['sub'] = sub;
+    data['email'] = email;
+    data['role'] = role;
     return data;
   }
 }
