@@ -1,6 +1,6 @@
 import 'package:casestudy1/component/payroll_button.dart';
 import 'package:casestudy1/component/payroll_textformfield.dart';
-import 'package:casestudy1/features/dashboard/user_dashboard.dart';
+import 'package:casestudy1/features/dashboard/admin_dashboard.dart';
 import 'package:casestudy1/main.dart';
 import 'package:casestudy1/utils/api_manager.dart';
 import 'package:casestudy1/utils/ui_colors.dart';
@@ -51,7 +51,7 @@ class _AdminLoginScreenState extends State<AdminLoginScreen> {
           Navigator.pushAndRemoveUntil(
             navigatorKey.currentContext!,
             MaterialPageRoute(
-              builder: (context) => UserDashboard(userID: userID ?? ''),
+              builder: (context) => AdminDashboard(userID: userID ?? ''),
             ),
             (route) => false,
           );

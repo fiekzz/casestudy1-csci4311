@@ -1,7 +1,9 @@
 import 'package:casestudy1/component/pfetch.dart';
+import 'package:casestudy1/utils/models/get_all_staff_Model.dart';
 import 'package:casestudy1/utils/models/get_user_details_model.dart';
 import 'package:casestudy1/utils/models/get_working_status_model.dart';
 import 'package:casestudy1/utils/models/user_login_response_model.dart';
+// import 'package:casestudy1/utils/models/get_all_staff_model.dart';
 
 class ApiManager {
   static Future<UserLoginResponseModel> userLogin(
@@ -32,6 +34,20 @@ class ApiManager {
       ).authorizedRequest();
 
       return GetUserDetailsModel.fromJson(response);
+    } catch (error) {
+      print(error);
+      rethrow;
+    }
+  }
+  //getallstaff
+  static Future<GetAllStaffModel> getAllStaff() async {
+    try {
+      final response = await PFetch(
+        '/admins/get-all-staff',
+        method: PFetchMethod.GET,
+      ).authorizedRequest();
+
+      return GetAllStaffModel.fromJson(response);
     } catch (error) {
       print(error);
       rethrow;
@@ -81,4 +97,5 @@ class ApiManager {
       rethrow;
     }
   }
+  
 }
