@@ -5,7 +5,7 @@ A new Flutter project By :
 Luqman Alhakim bin Yazid 2019079
 - Admin Login, Admin Dashboard 
 
-FIKRI BIN HISHAM-MUDDIN 2112011
+Fikri bin Hisham-muddin 2112011
 - User login, User Dashboard, Backened, Database
 
 A Payroll Management System
