@@ -3,10 +3,12 @@
 A new Flutter project By :
 
 Luqman Alhakim bin Yazid 2019079
-- Admin Login, Admin Dashboard 
+- Admin Login = Sign in as Admin
+- Admin Dashboard = Where Admin can view all the staff working hours
 
 Fikri bin Hisham-muddin 2112011
-- User login, User Dashboard, Backened, Database
+- User login = Sign in as user
+- User Dashboard = Where the user can see the total working hours , Check-in, Check-out and see the total payrate .
 
 A Payroll Management System
 
